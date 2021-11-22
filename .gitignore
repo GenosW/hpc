@@ -1,0 +1,11 @@
+.vscode
+
+# python
+.env
+.venv
+.pycache
+
+# C/C++ + build files and such
+.o
+.out
+build
