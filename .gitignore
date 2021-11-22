@@ -3,7 +3,7 @@
 # python
 .env
 .venv
-.pycache
+__pycache__
 
 # C/C++ + build files and such
 .o
