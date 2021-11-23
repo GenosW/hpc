@@ -9,3 +9,6 @@ __pycache__
 .o
 .out
 build
+
+# data
+lengths.csv
