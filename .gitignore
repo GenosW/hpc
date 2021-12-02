@@ -6,9 +6,10 @@
 __pycache__
 
 # C/C++ + build files and such
-.o
-.out
+*.o
+*.out
 build
+test_algx
 
 # data
 lengths.csv

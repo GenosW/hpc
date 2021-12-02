@@ -60,13 +60,14 @@ def algorithm_x(
         u_bits: str = binary(u)
         # X2: b
         b: str = u_bits[-1]
-        if debug:
-            print(f"X2: b = {b}")
 
         # X3: Exchange
         if debug:
             print("X3: Exchange")
         b_prime_e: str = j_bits_r[e]
+        if debug:
+            print(f"X2: b = {b}")
+            print(f"X3: b_prime_e = {b_prime_e}")
         if cmp := b != b_prime_e:
             v: int = u ^ 1 if not debug else bxor(u, 1)
             path += [v]
@@ -96,5 +97,5 @@ def algorithm_x(
 if __name__ == "__main__":
     # A simple example
     X = CommunicationStructure(3)
-    path = algorithm_x(2, 7, X, debug=True)
+    path = algorithm_x(0, 5, X, debug=True)
     print(f"Path: {path}")
