@@ -6,7 +6,11 @@ from algorithmx import *
 
 
 def test_algorithmx(
-    X: CommunicationStructure, source: int, sink: int = None, debug: bool = False, verbose: int = False
+    X: CommunicationStructure,
+    source: int,
+    sink: int = None,
+    debug: bool = False,
+    verbose: int = False,
 ):
     path = algorithm_x(source, sink, X, debug=debug, verbose=max(0, verbose - 1))
     ok = "TRUE" if path[0] == source and path[-1] == sink else "FALSE"
@@ -28,13 +32,13 @@ def print_report(test_report: list):
 
 debug = False
 print("#" * 40)
-dim_range = range(2, 11) 
+dim_range = range(2, 11)
 report = []
 for d in dim_range:
     X = CommunicationStructure(d)
 
     sources = set([0, 1])
-    sinks = set([ X.num_nodes - 1])
+    sinks = set([X.num_nodes - 1])
     if d > 1:
         sources.update([2])
         sinks.update([2])
@@ -42,7 +46,7 @@ for d in dim_range:
         sources.update([4])
         sinks.update([5, 6])
     if d > 3:
-        sources.update([random.randrange(3, X.num_nodes - 1)] *  int( d ))
+        sources.update([random.randrange(3, X.num_nodes - 1)] * int(d))
     for source, sink in it.product(sources, sinks):
         res = test_algorithmx(X, source, sink, debug=debug, verbose=0)
         report += [res]

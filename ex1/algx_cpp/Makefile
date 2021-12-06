@@ -15,7 +15,7 @@ ifndef OS
     OS = linux
 endif
 
-CPP = clang++
+CPP = c++
 # CPP = g++
 
 
